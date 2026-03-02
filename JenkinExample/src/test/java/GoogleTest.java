@@ -1,0 +1,30 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class GoogleTest {
+
+    @Test
+    public void openGoogle() {
+
+        // Setup driver automatically
+        WebDriverManager.chromedriver().setup();
+
+        // Configure headless mode for Jenkins
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1920,1080");
+
+        // Pass options into ChromeDriver
+        WebDriver driver = new ChromeDriver(options);
+
+        driver.get("https://www.google.com");
+        System.out.println("Title is: " + driver.getTitle());
+
+        driver.quit();
+    }
+}

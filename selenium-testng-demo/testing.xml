@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SeleniumSuite">
+
+    <test name="GoogleTestExecution">
+        <classes>
+            <class name="GoogleTest"/>
+        </classes>
+    </test>
+
+</suite>
